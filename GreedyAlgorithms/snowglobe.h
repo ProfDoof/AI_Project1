@@ -10,17 +10,17 @@ struct snowglobe
   double ratio;
 };
 
-int sortWeight()
+bool sortWeight(snowglobe a, snowglobe b)
 {
-
+  return a.weight < b.weight;
 }
 
-int sortValue()
+bool sortValue(snowglobe a, snowglobe b)
 {
-
+  return a.value > b.value;
 }
 
-int sortRatio()
+bool sortRatio(snowglobe a, snowglobe b)
 {
-
+  return a.ratio > b.ratio;
 }
