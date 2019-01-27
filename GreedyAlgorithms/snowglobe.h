@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 struct snowglobe
@@ -7,10 +8,6 @@ struct snowglobe
   int weight;
   int value;
   double ratio;
-  snowglobe(i,w,v) : id(i), weight(w), value(v)
-  {
-    ratio = value/weight;
-  }
 };
 
 int sortWeight()
