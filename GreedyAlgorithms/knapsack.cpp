@@ -7,6 +7,41 @@
 
 using namespace std;
 
+vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house, int& totalValue)
+{
+  vector<snowglobe> knapsack;
+  int currentWeight;
+
+  //Greedy Algorithms are implemented below
+  currentWeight = 0;
+  totalValue = 0;
+  sort(house.begin(), house.end(), sortWeight);
+  for (int i = 0; i < house.size(); i++)
+  {
+    if (currentWeight+house[i].weight <= maxWeight)
+    {
+      knapsack.push_back(house[i]);
+      currentWeight += house[i].weight;
+      totalValue += house[i].value;
+    }
+    else
+    {
+      return knapsack;
+    }
+  }
+}
+
+void outputKnapsack(string sortedBy, vector<snowglobe> knapsack, int totalValue)
+{
+  cout << "Sorted by "+sortedBy+"\n-------------------" << endl;
+  for (int i = 0; i < knapsack.size(); i++)
+  {
+    cout << knapsack[i].id << " " << knapsack[i].weight << " " << knapsack[i].value << " " << knapsack[i].ratio << endl;
+  }
+  cout << endl;
+  cout << "Total Value of Snowglobes stolen from Dr. Pettit/Reeves via this method is $" << totalValue << endl << endl;
+}
+
 int main()
 {
   //create the vector to hold all the snowglobes (and the other variables)
@@ -70,49 +105,16 @@ int main()
   fin.close();
 
   //Variables used in the Greedy Algorithms are below
-  int currentWeight;
   int totalValue;
+  knapsack = grabByWeight(maxWeight, house, totalValue);
+  outputKnapsack("Weight",knapsack, totalValue);
 
-  //Greedy Algorithms are implemented below
-  currentWeight = 0;
-  totalValue = 0;
-  sort(house.begin(), house.end(), sortWeight);
-  for (int i = 0; i < house.size(); i++)
-  {
-    if (currentWeight+house[i].weight <= maxWeight)
-    {
-      knapsack.push_back(house[i]);
-      currentWeight += house[i].weight;
-      totalValue += house[i].value;
-    }
-    else
-    {
-      i = house.size();
-    }
-  }
 
-  cout << "Sorted by Weight\n-------------------" << endl;
-  for (int i = 0; i < knapsack.size(); i++)
-  {
-    cout << knapsack[i].id << " " << knapsack[i].weight << " " << knapsack[i].value << " " << knapsack[i].ratio << endl;
-  }
-  cout << endl;
-  cout << "Total Value of Snowglobes stolen from Dr. Pettit/Reeves via this method is $" << totalValue << endl << endl;
-
-  cout << "Sorted by Value\n-------------------" << endl;
   sort(house.begin(), house.end(), sortValue);
-  for (int i = 0; i < house.size(); i++)
-  {
-    cout << house[i].id << " " << house[i].weight << " " << house[i].value << " " << house[i].ratio << endl;
-  }
-  cout << endl;
+  outputKnapsack("Value",knapsack, totalValue);
 
-  cout << "Sorted by Ratio of Value to Weight\n-------------------" << endl;
   sort(house.begin(), house.end(), sortRatio);
-  for (int i = 0; i < house.size(); i++)
-  {
-    cout << house[i].id << " " << house[i].weight << " " << house[i].value << " " << house[i].ratio << endl;
-  }
-  cout << endl;
+  outputKnapsack("Ratio of Value to Weight",knapsack, totalValue);
+
 
 }
