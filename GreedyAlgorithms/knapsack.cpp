@@ -76,8 +76,9 @@ int main()
   //Greedy Algorithms are implemented below
   currentWeight = 0;
   totalValue = 0;
+  bool full = false;
   sort(house.begin(), house.end(), sortWeight);
-  for (int i = 0; i < house.size(); i++)
+  for (int i = 0; i < house.size() && !full; i++)
   {
     if (currentWeight+house[i].weight <= maxWeight)
     {
@@ -87,7 +88,7 @@ int main()
     }
     else
     {
-      break;
+      full = true;
     }
   }
 
