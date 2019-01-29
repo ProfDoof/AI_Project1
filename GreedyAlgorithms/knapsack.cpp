@@ -7,14 +7,13 @@
 
 using namespace std;
 
-vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house, int& totalValue)
+vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house)
 {
   vector<snowglobe> knapsack;
   int currentWeight;
 
   //Greedy Algorithms are implemented below
   currentWeight = 0;
-  totalValue = 0;
   sort(house.begin(), house.end(), sortWeight);
   for (int i = 0; i < house.size(); i++)
   {
@@ -22,7 +21,6 @@ vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house, int& tota
     {
       knapsack.push_back(house[i]);
       currentWeight += house[i].weight;
-      totalValue += house[i].value;
     }
     else
     {
@@ -31,12 +29,46 @@ vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house, int& tota
   }
 }
 
-void outputKnapsack(string sortedBy, vector<snowglobe> knapsack, int totalValue)
+vector<snowglobe> grabByValue(int maxWeight, vector<snowglobe> house)
 {
+  vector<snowglobe> knapsack;
+  int currentWeight;
+
+  //Greedy Algorithms are implemented below
+  currentWeight = 0;
+  sort(house.begin(), house.end(), sortValue);
+  for( int i = 0; i < house.size(); i++ )
+  {
+    if (currentWeight+house[i].weight <= maxWeight)
+    {
+      knapsack.push_back(house[i]);
+      currentWeight += house[i].weight;
+    }
+  }
+
+  return knapsack;
+}
+
+vector<snowglobe> grabByRatio(int maxWeight, vector<snowglobe> house)
+{
+  vector<snowglobe> knapsack;
+  int currentWeight;
+
+  //Greedy Algorithms are implemented below
+  currentWeight = 0;
+  sort(house.begin(), house.end(), sortRatio);
+
+  return knapsack;
+}
+
+void outputKnapsack(string sortedBy, vector<snowglobe> knapsack)
+{
+  int totalValue = 0;
   cout << "Sorted by "+sortedBy+"\n-------------------" << endl;
   for (int i = 0; i < knapsack.size(); i++)
   {
     cout << knapsack[i].id << " " << knapsack[i].weight << " " << knapsack[i].value << " " << knapsack[i].ratio << endl;
+    totalValue += knapsack[i].value;
   }
   cout << endl;
   cout << "Total Value of Snowglobes stolen from Dr. Pettit/Reeves via this method is $" << totalValue << endl << endl;
@@ -104,17 +136,16 @@ int main()
 
   fin.close();
 
-  //Variables used in the Greedy Algorithms are below
-  int totalValue;
-  knapsack = grabByWeight(maxWeight, house, totalValue);
-  outputKnapsack("Weight",knapsack, totalValue);
+  //Greedy Algorithms called here. totalValue is passed by reference so that you can have the changed version.
+  knapsack = grabByWeight(maxWeight, house);
+  outputKnapsack("Weight",knapsack);
 
+  knapsack = grabByValue(maxWeight, house);
+  outputKnapsack("Value",knapsack);
 
-  sort(house.begin(), house.end(), sortValue);
-  outputKnapsack("Value",knapsack, totalValue);
+  knapsack = grabByRatio(maxWeight, house);
 
-  sort(house.begin(), house.end(), sortRatio);
-  outputKnapsack("Ratio of Value to Weight",knapsack, totalValue);
+  outputKnapsack("Ratio of Value to Weight",knapsack);
 
 
 }
