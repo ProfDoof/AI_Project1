@@ -169,10 +169,12 @@ int main()
   knapsack = grabByWeight(maxWeight, house);
   cout << "By Weight:" << endl;
   outputKnapsack(knapsack);
+  cout << endl;
 
   knapsack = grabByValue(maxWeight, house);
   cout << "By Value:" << endl;
   outputKnapsack(knapsack);
+  cout << endl;
 
   knapsack = grabByRatio(maxWeight, house);
   cout << "By Value-to-Weight Ratio:" << endl;
