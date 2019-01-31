@@ -20,12 +20,6 @@ void recursivelyExhaustive(vector<snowglobe> house, int houseSize, int place, in
     return;
   }
 
-  //pruning -> if we are over, no need to continue
-  if (currentWeight > maxWeight)
-  {
-    return;
-  }
-
   recursivelyExhaustive(house, houseSize, place+1, maxWeight, bestKnapsack, bestValue, currentKnapsack, currentWeight, currentValue);
   currentKnapsack.push_back(house[place]);
   currentWeight += house[place].weight;
