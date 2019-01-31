@@ -7,6 +7,71 @@
 
 using namespace std;
 
+void iterateArray(bool* array, int houseSize)
+{
+  for (int i = 0; i < houseSize; i++)
+  {
+    //cout << "iterateArray i = " << i << endl;
+    if (array[i])
+    {
+      array[i] = false;
+    }
+    else
+    {
+      array[i] = true;
+      return;
+    }
+  }
+}
+
+vector<snowglobe> exhaustive(vector<snowglobe> house, int maxWeight, int houseSize)
+{
+  //variables
+  vector<snowglobe> bestKnapsack;
+  int bestValue = 0;
+
+  bool* array = new bool[houseSize];
+
+  for (int i = 0; i < houseSize; i++)
+  {
+    array[i] = false;
+  }
+
+  for (int i = 0; i < pow(2, houseSize); i++)
+  {
+    //cout << "i = " << i << endl;
+    //make a current knapsack for this run of the loop
+    vector<snowglobe> currentKnapsack;
+    int currentWeight = 0;
+    int currentValue = 0;
+
+    //put the things for this combination in the current knapsack
+    for (int j = 0; j < houseSize; j++)
+    {
+      //cout << "j = " << j << endl;
+      if (array[j])
+      {
+        currentKnapsack.push_back(house[j]);
+        currentWeight += house[j].weight;
+        currentValue += house[j].value;
+      }
+    }
+
+    //see if this is valid, if so is it the best so far?
+    if (currentWeight <= maxWeight && currentValue > bestValue)
+    {
+      bestKnapsack = currentKnapsack;
+      bestValue = currentValue;
+    }
+
+    iterateArray(array, houseSize);
+  }
+
+  //clean up
+  delete [] array;
+  return bestKnapsack;
+}
+
 void outputKnapsack(vector<snowglobe> knapsack)
 {
   int totalValue = 0;
@@ -95,5 +160,9 @@ int main()
   fin.close();
 
   //Exhaustive Search implemented here.
-  
+  knapsack = exhaustive(house, maxWeight, numItems);
+  cout << "By Exhaustive Search: ";
+  outputKnapsack(knapsack);
+  cout << endl;
+
 }
