@@ -9,20 +9,15 @@ using namespace std;
 
 void recursivelyExhaustive(vector<snowglobe> house, int houseSize, int place, int maxWeight, vector<snowglobe>& bestKnapsack, int& bestValue, vector<snowglobe> currentKnapsack, int currentWeight, int currentValue)
 {
-  if (place == houseSize)
+  //extra condition of currentWeight >= maxWeight added for pruning
+  if (currentWeight >= maxWeight || place == houseSize)
   {
-    if (currentValue > bestValue && currentWeight <= maxWeight)
+    if (currentWeight <= maxWeight && currentValue > bestValue)
     {
       bestKnapsack = currentKnapsack;
       bestValue = currentValue;
     }
 
-    return;
-  }
-
-  //pruning -> if we are over, no need to continue
-  if (currentWeight > maxWeight)
-  {
     return;
   }
 
