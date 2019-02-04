@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 using namespace std;
 
@@ -124,6 +125,7 @@ int main()
   cin >> filename;
 
   //open the file and read in the snowglobes
+  auto t1 = chrono::high_resolution_clock::now();
   fin.open(filename.c_str());
 
   if (fin.is_open())
@@ -164,19 +166,35 @@ int main()
   }
 
   fin.close();
+  auto t2 = chrono::high_resolution_clock::now();
+  chrono::duration<double, std::milli> fp_ms = t2 - t1;
+
+  cout << endl << "File Input time: " << fp_ms.count() << endl;
 
   //Greedy Algorithms called here.
+  t1 = chrono::high_resolution_clock::now();
   knapsack = grabByWeight(maxWeight, house);
+  t2 = chrono::high_resolution_clock::now();
+  fp_ms = t2 - t1;
   cout << "By Weight:" << endl;
   outputKnapsack(knapsack);
   cout << endl;
+  cout << "Weight time: " << fp_ms.count() << endl;
 
+  t1 = chrono::high_resolution_clock::now();
   knapsack = grabByValue(maxWeight, house);
+  t2 = chrono::high_resolution_clock::now();
+  fp_ms = t2 - t1;
   cout << "By Value:" << endl;
   outputKnapsack(knapsack);
   cout << endl;
+  cout << "Value time: " << fp_ms.count() << endl;
 
+  t1 = chrono::high_resolution_clock::now();
   knapsack = grabByRatio(maxWeight, house);
+  t2 = chrono::high_resolution_clock::now();
+  fp_ms = t2 - t1;
   cout << "By Value-to-Weight Ratio:" << endl;
   outputKnapsack(knapsack);
+  cout << "Value-to-Weight time: " << fp_ms.count() << endl;
 }

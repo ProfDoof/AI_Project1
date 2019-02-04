@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 using namespace std;
 
@@ -76,6 +77,7 @@ int main()
   cin >> filename;
 
   //open the file and read in the snowglobes
+  auto t1 = chrono::high_resolution_clock::now();
   fin.open(filename.c_str());
 
   if (fin.is_open())
@@ -116,11 +118,19 @@ int main()
   }
 
   fin.close();
+  auto t2 = chrono::high_resolution_clock::now();
+  chrono::duration<double, std::milli> fp_ms = t2 - t1;
+
+  cout << endl << "File Input time: " << fp_ms.count() << endl;
 
   //Exhaustive Search implemented here.
+  t1 = chrono::high_resolution_clock::now();
   recursivelyExhaustive(house, numItems, 0, maxWeight, knapsack, tempValue, temp, 0, 0);
-  cout << "By Exhaustive Search (Recursive): ";
+  t2 = chrono::high_resolution_clock::now();
+  fp_ms = t2 - t1;
+  cout << "By Exhaustive Search (Recursive) with Pruning: ";
   outputKnapsack(knapsack);
   cout << endl;
+  cout << "Pruning time: " << fp_ms.count() << endl;
 
 }
