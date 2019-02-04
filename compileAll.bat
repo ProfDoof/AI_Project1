@@ -49,5 +49,3 @@ echo -----------------------------------MarWitData5---------------------------
 echo.
 echo DataSets\MarWitData5.kp | greed.exe
 echo.
-echo DataSets\MarWitData5.kp | prune.exe
-echo.
