@@ -1,4 +1,4 @@
-echo Run Datasets with exe
+echo Run Datasets with all executables
 echo.
 echo -----------------------------------MarWitData1---------------------------
 echo.
