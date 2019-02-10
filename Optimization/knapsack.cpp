@@ -21,7 +21,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
   }
 }
 
-vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house)
+vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe>& house)
 {
   vector<snowglobe> knapsack;
   int currentWeight = 0;
@@ -43,7 +43,7 @@ vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house)
   }
 }
 
-vector<snowglobe> grabByValue(int maxWeight, vector<snowglobe> house)
+vector<snowglobe> grabByValue(int maxWeight, vector<snowglobe>& house)
 {
   vector<snowglobe> knapsack;
   int currentWeight = 0;
@@ -69,7 +69,7 @@ vector<snowglobe> grabByValue(int maxWeight, vector<snowglobe> house)
   return knapsack;
 }
 
-vector<snowglobe> grabByRatio(int maxWeight, vector<snowglobe> house)
+vector<snowglobe> grabByRatio(int maxWeight, vector<snowglobe>& house)
 {
   vector<snowglobe> knapsack;
   int currentWeight = 0;
