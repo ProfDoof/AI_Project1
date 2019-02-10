@@ -8,6 +8,19 @@
 
 using namespace std;
 
+double getTemp()
+{
+
+}
+
+vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house)
+{
+  while ()
+  {
+    double temperature = getTemp();
+  }
+}
+
 vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house)
 {
   vector<snowglobe> knapsack;
@@ -21,6 +34,7 @@ vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe> house)
     {
       knapsack.push_back(house[i]);
       currentWeight += house[i].weight;
+      house.erase(house.begin() + i);
     }
     else
     {
@@ -42,6 +56,7 @@ vector<snowglobe> grabByValue(int maxWeight, vector<snowglobe> house)
     {
       knapsack.push_back(house[i]);
       currentWeight += house[i].weight;
+      house.erase(house.begin() + i);
 
       //check if we're done
       if (currentWeight == maxWeight)
@@ -67,6 +82,7 @@ vector<snowglobe> grabByRatio(int maxWeight, vector<snowglobe> house)
     {
       knapsack.push_back(house[i]);
       currentWeight += house[i].weight;
+      house.erase(house.begin() + i);
 
       //check if we're done
       if (currentWeight == maxWeight)
