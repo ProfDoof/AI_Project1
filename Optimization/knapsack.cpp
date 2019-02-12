@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <chrono>
+#include <random>
 
 using namespace std;
 
@@ -13,11 +14,119 @@ double getTemp()
 
 }
 
-vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house)
+vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house, int maxWeight)
 {
-  while ()
+  // Generate random seed and other random tools
+  random_device rd{};
+  mt19937 engine{rd()};
+  uniform_real_distribution<double> dist{0.0, 1.0};
+
+  // Generate all timing variables that will be used to change the temperature
+  auto startTime = chrono::high_resolution_clock::now();
+  auto currentTime = startTime;
+  chrono::duration<double, std::milli> compare = currentTime - startTime;
+
+  // Define variables that will be consistently used in while loop
+  int houseCount = house.size();
+  int knapsackCount = knapsack.size();
+  int addCount;
+  long swapCount;
+  long totalNumOptions;
+  double chance;
+
+  while ( compare.count() < 5500 )
   {
+    // The temporary vectors and snowglobes to check.
+    snowglobe tempSnow1;
+    snowglobe tempSnow2;
+    vector<snowglobe> newKnapState;
+    vector<snowglobe> newHouseState;
+
+    // The generated current temp
     double temperature = getTemp();
+
+    // The number of options to choose from for the random options
+    addCount = houseCount;
+    swapCount = houseCount*knapsackCount;
+    totalNumOptions = addCount+swapCount;
+    chance = dist(engine) * totalNumOptions;
+
+    // Define the currentWeight and newStateWeight and Delta
+    int currentWeight = 0;
+    int currentValue = 0;
+    int newStateWeight = 0;
+    int newStateValue = 0;
+
+    // Randomly select either swap or add (if or else respectively)
+    if (chance < swapCount)
+    {
+      int loc;
+
+      // Set the new states equal to the old states
+      newHouseState = house;
+      newKnapState = knapsack;
+
+      // Act on the new states
+      // Randomly select snowglobe from house
+      loc = dist(engine) * houseCount);
+      tempSnow1 = newHouseState[loc];
+      newHouseState.erase(newHouseState.begin()+loc);
+
+      // Randomly select snowglobe from knapsack
+      loc = dist(engine) * (knapsackCount+1);
+      tempSnow2 = newKnapState[loc];
+      newKnapState.erase(newKnapState.begin()+loc);
+
+      // Add Randomly selected snowglobes to the respective new states.
+      newHouseState.push_back(tempSnow2);
+      newKnapState.push_back(tempSnow1);
+    }
+    else
+    {
+      int loc;
+
+      // Set the new states equal to the old states
+      newHouseState = house;
+      newKnapState = knapsack;
+
+      // Act on the new states
+      // Randomly select snowglobe from house
+      loc = dist(engine) * houseCount);
+      tempSnow1 = newHouseState[loc];
+      newHouseState.erase(newHouseState.begin()+loc);
+
+      // Add Randomly selected snowglobes to the respective new states.
+      newKnapState.push_back(tempSnow1);
+    }
+
+    for (int i = 0; i < knapsackCount; i++)
+    {
+      currentWeight += knapsack[i].weight;
+      currentValue += knapsack[i].value;
+    }
+
+    for (int i = 0; i < newKnapState.size(); i++)
+    {
+      newStateWeight += newKnapState[i].weight;
+      newStateValue += newKnapState[i].value;
+    }
+
+    // Check that the new state generated is valid.
+    if (newStateWeight <= maxWeight)
+    {
+      // Calculate Delta
+      Delta = newStateValue - currentValue;
+
+      // Determine whether the new state is better and if it isn't whether
+      // we should take it anyway.
+      if (Delta > 0 || dist(engine) < exp(Delta/getTemp()))
+      {
+        house = newHouseState;
+        knapsack = newKnapState;
+      }
+    }
+    currentTime = chrono::high_resolution_clock::now();
+    compare = currentTime - startTime;
   }
 }
 
