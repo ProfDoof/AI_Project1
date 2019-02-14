@@ -9,11 +9,6 @@
 
 using namespace std;
 
-double getTemp()
-{
-
-}
-
 vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house, int maxWeight)
 {
   // Generate random seed and other random tools
@@ -34,6 +29,8 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
   long totalNumOptions;
   double chance;
 
+  double temperature = 10000;
+
   while ( compare.count() < 5500 )
   {
     // The temporary vectors and snowglobes to check.
@@ -41,9 +38,6 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     snowglobe tempSnow2;
     vector<snowglobe> newKnapState;
     vector<snowglobe> newHouseState;
-
-    // The generated current temp
-    double temperature = getTemp();
 
     // The number of options to choose from for the random options
     addCount = houseCount;
@@ -119,7 +113,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
 
       // Determine whether the new state is better and if it isn't whether
       // we should take it anyway.
-      if (Delta > 0 || dist(engine) < exp(Delta/getTemp()))
+      if (Delta > 0 || dist(engine) < exp(Delta/temperature)
       {
         house = newHouseState;
         knapsack = newKnapState;
@@ -127,6 +121,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     }
     currentTime = chrono::high_resolution_clock::now();
     compare = currentTime - startTime;
+    temperature = 10000*pow((1-.0015), compare.count());
   }
 }
 
