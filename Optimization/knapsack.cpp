@@ -9,11 +9,6 @@
 
 using namespace std;
 
-double getTemp()
-{
-
-}
-
 vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house, int maxWeight)
 {
   // Generate random seed and other random tools
@@ -43,6 +38,8 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
   // function as subtraction just in one iteration rather than 2.
   // Then we will determine whether the new state space is better
   // or if we should take it even though it isn't better.
+  double temperature = 10000;
+
   while ( compare.count() < 5500 )
   {
     // The temporary vectors and snowglobes to check.
@@ -50,9 +47,6 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     snowglobe tempSnow2;
     vector<snowglobe> newKnapState;
     vector<snowglobe> newHouseState;
-
-    // The generated current temp
-    double temperature = getTemp();
 
     // The number of options to choose from for the random options
     addCount = houseCount;
@@ -77,7 +71,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
 
       // Act on the new states
       // Randomly select snowglobe from house
-      loc = dist(engine) * houseCount);
+      loc = dist(engine) * houseCount;
       tempSnow1 = newHouseState[loc];
       newHouseState.erase(newHouseState.begin()+loc);
 
@@ -100,7 +94,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
 
       // Act on the new states
       // Randomly select snowglobe from house
-      loc = dist(engine) * houseCount);
+      loc = dist(engine) * houseCount;
       tempSnow1 = newHouseState[loc];
       newHouseState.erase(newHouseState.begin()+loc);
 
@@ -124,11 +118,11 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     if (newStateWeight <= maxWeight)
     {
       // Calculate Delta
-      Delta = newStateValue - currentValue;
+      double Delta = newStateValue - currentValue;
 
       // Determine whether the new state is better and if it isn't whether
       // we should take it anyway.
-      if (Delta > 0 || dist(engine) < exp(Delta/getTemp()))
+      if (Delta > 0 || dist(engine) < exp(Delta/temperature))
       {
         house = newHouseState;
         knapsack = newKnapState;
@@ -139,6 +133,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     // amount of time.
     currentTime = chrono::high_resolution_clock::now();
     compare = currentTime - startTime;
+    temperature = 10000*pow((1-.0015), compare.count());
   }
 
   return knapsack;
