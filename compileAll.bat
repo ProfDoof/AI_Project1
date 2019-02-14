@@ -1,9 +1,6 @@
 ECHO OFF
 ECHO Compile
-cd Exhaust
-g++ -std=c++11 knapsack.cpp -o ..\exhaust.exe
-cd ..\GreedyAlgorithms
-g++ -std=c++11 knapsack.cpp -o ..\greed.exe
-cd ..\Pruning
-g++ -std=c++11 recursive.cpp -o ..\prune.exe
-cd ..
+g++ -std=c++11 .\Exhaust\knapsack.cpp -o exhaust.exe
+g++ -std=c++11 .\GreedyAlgorithms\knapsack.cpp -o greed.exe
+g++ -std=c++11 .\Pruning\recursive.cpp -o prune.exe
+g++ -std=c++11 .\Optimization\knapsack.cpp -o optimized.exe

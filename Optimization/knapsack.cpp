@@ -68,18 +68,15 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
       // Set the new states equal to the old states
       newHouseState = house;
       newKnapState = knapsack;
-
       // Act on the new states
       // Randomly select snowglobe from house
       loc = dist(engine) * houseCount;
       tempSnow1 = newHouseState[loc];
       newHouseState.erase(newHouseState.begin()+loc);
-
       // Randomly select snowglobe from knapsack
-      loc = dist(engine) * (knapsackCount+1);
+      loc = dist(engine) * (knapsackCount);
       tempSnow2 = newKnapState[loc];
       newKnapState.erase(newKnapState.begin()+loc);
-
       // Add Randomly selected snowglobes to the respective new states.
       newHouseState.push_back(tempSnow2);
       newKnapState.push_back(tempSnow1);
@@ -126,6 +123,8 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
       {
         house = newHouseState;
         knapsack = newKnapState;
+        houseCount = house.size();
+        knapsackCount = knapsack.size();
       }
     }
 
@@ -307,6 +306,10 @@ int main()
 
   //Greedy Algorithms called here.
   knapsack = grabByWeight(maxWeight, house);
+  knapsack = simulatedAnnealing(knapsack, house, maxWeight);
+  cout << "By Weight (Optimized with Simulated Annealing): ";
+  outputKnapsack(knapsack);
+
 
   knapsack = grabByValue(maxWeight, house);
 
