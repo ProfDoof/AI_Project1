@@ -34,6 +34,15 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
   long totalNumOptions;
   double chance;
 
+  // This is where the magic happens. We will go through and randomly
+  // select whether to swap or add and then randomly select the
+  // snowglobes we need to do either all to generate the new state
+  // space.
+  // We didn't randomly select subtraction because that will always
+  // make the value worse so we are relying on swapping to do the same
+  // function as subtraction just in one iteration rather than 2.
+  // Then we will determine whether the new state space is better
+  // or if we should take it even though it isn't better.
   while ( compare.count() < 5500 )
   {
     // The temporary vectors and snowglobes to check.
@@ -125,9 +134,14 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
         knapsack = newKnapState;
       }
     }
+
+    // Get the current time so that we can run this process for only a specific
+    // amount of time.
     currentTime = chrono::high_resolution_clock::now();
     compare = currentTime - startTime;
   }
+
+  return knapsack;
 }
 
 vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe>& house)
@@ -297,29 +311,10 @@ int main()
   cout << endl << "File Input time: " << fp_ms.count() << endl;
 
   //Greedy Algorithms called here.
-  t1 = chrono::high_resolution_clock::now();
   knapsack = grabByWeight(maxWeight, house);
-  t2 = chrono::high_resolution_clock::now();
-  fp_ms = t2 - t1;
-  cout << "By Weight:" << endl;
-  outputKnapsack(knapsack);
-  cout << endl;
-  cout << "Weight time: " << fp_ms.count() << endl;
 
-  t1 = chrono::high_resolution_clock::now();
   knapsack = grabByValue(maxWeight, house);
-  t2 = chrono::high_resolution_clock::now();
-  fp_ms = t2 - t1;
-  cout << "By Value:" << endl;
-  outputKnapsack(knapsack);
-  cout << endl;
-  cout << "Value time: " << fp_ms.count() << endl;
 
-  t1 = chrono::high_resolution_clock::now();
   knapsack = grabByRatio(maxWeight, house);
-  t2 = chrono::high_resolution_clock::now();
-  fp_ms = t2 - t1;
-  cout << "By Value-to-Weight Ratio:" << endl;
-  outputKnapsack(knapsack);
-  cout << "Value-to-Weight time: " << fp_ms.count() << endl;
+
 }
