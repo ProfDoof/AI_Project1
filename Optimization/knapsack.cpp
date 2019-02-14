@@ -62,7 +62,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
 
       // Act on the new states
       // Randomly select snowglobe from house
-      loc = dist(engine) * houseCount);
+      loc = dist(engine) * houseCount;
       tempSnow1 = newHouseState[loc];
       newHouseState.erase(newHouseState.begin()+loc);
 
@@ -85,7 +85,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
 
       // Act on the new states
       // Randomly select snowglobe from house
-      loc = dist(engine) * houseCount);
+      loc = dist(engine) * houseCount;
       tempSnow1 = newHouseState[loc];
       newHouseState.erase(newHouseState.begin()+loc);
 
@@ -109,11 +109,11 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     if (newStateWeight <= maxWeight)
     {
       // Calculate Delta
-      Delta = newStateValue - currentValue;
+      double Delta = newStateValue - currentValue;
 
       // Determine whether the new state is better and if it isn't whether
       // we should take it anyway.
-      if (Delta > 0 || dist(engine) < exp(Delta/temperature)
+      if (Delta > 0 || dist(engine) < exp(Delta/temperature))
       {
         house = newHouseState;
         knapsack = newKnapState;
