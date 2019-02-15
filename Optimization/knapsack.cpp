@@ -11,6 +11,15 @@ using namespace std;
 
 vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house, int maxWeight)
 {
+  // Keep track of best solution so far
+  vector<snowglobe> best = knapsack;
+  int bestValue = 0;
+
+  for (int i = 0; i < best.size(); i++)
+  {
+    bestValue += best[i].value;
+  }
+
   // Generate random seed and other random tools
   random_device rd{};
   mt19937 engine{rd()};
@@ -125,6 +134,13 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
         knapsack = newKnapState;
         houseCount = house.size();
         knapsackCount = knapsack.size();
+
+        // See if this is a new global best
+        if (newStateValue > bestValue)
+        {
+          best = newKnapState;
+          bestValue = newStateValue;
+        }
       }
     }
 
@@ -135,7 +151,7 @@ vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglob
     temperature = 10000*pow((1-.0015), compare.count());
   }
 
-  return knapsack;
+  return best;
 }
 
 vector<snowglobe> grabByWeight(int maxWeight, vector<snowglobe>& house)
