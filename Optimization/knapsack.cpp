@@ -322,13 +322,15 @@ int main()
 
   //Greedy Algorithms called here.
   knapsack = grabByWeight(maxWeight, house);
+  cout << "Greedy algorithm (Weight) Result: ";
+  outputKnapsack(knapsack);
   knapsack = simulatedAnnealing(knapsack, house, maxWeight);
   cout << "By Weight (Optimized with Simulated Annealing): ";
   outputKnapsack(knapsack);
 
 
-  knapsack = grabByValue(maxWeight, house);
+  //knapsack = grabByValue(maxWeight, house);
 
-  knapsack = grabByRatio(maxWeight, house);
+  //knapsack = grabByRatio(maxWeight, house);
 
 }
