@@ -20,9 +20,12 @@ int main()
                     "f21.kp","f23.kp","f25.kp","f30.kp", "f31.kp",
                     "g23.kp","g24.kp","g25.kp","g26.kp"};
   int numFiles = 34;
-  string fileOut = "runtimeTest.csv";
-  ofstream fout(fileOut, ofstream::out);
-  for (int i = 0; i < 1; i++)
+  string fileOut1 = "runtimeTest_v1.csv";
+  string fileOut2 = "runtimeTest_v2.csv";
+  ofstream fout(fileOut1, ofstream::out);
+  ofstream fo2(fileOut2, ofstream::out);
+  fo2 << "File, Approach, Runtime, Value, Weight, Number of Items in Knapsack" << endl;
+  for (int i = 0; i < numFiles; i++)
   {
     fout << ",,,"+files[i]+",,," << endl;
     fout << ", Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight" << endl;
@@ -123,7 +126,6 @@ int main()
     value[3] = getValue(knapsack);
     weight[3] = getWeight(knapsack);
     number[3] = knapsack.size();
-    cout << knapsack.size();
 
     // Because of the way that the pruned exhaustive search is implemented
     // we need to reset the knapsack before we use it.
@@ -138,7 +140,6 @@ int main()
     value[4] = getValue(knapsack);
     weight[4] = getWeight(knapsack);
     number[4] = knapsack.size();
-    cout << knapsack.size();
 
     t1 = chrono::high_resolution_clock::now();
     knapsack = grabByWeightOpt(maxWeight, house);
@@ -150,32 +151,45 @@ int main()
     number[5] = knapsack.size();
 
     fout << "runtime";
-    for (int i = 0; i < 6; i++)
+    for (int j = 0; j < 6; j++)
     {
-      fout << "," << time[i].count();
+      fout << "," << time[j].count();
     }
     fout << endl;
 
     fout << "value";
-    for (int i = 0; i < 6; i++)
+    for (int j = 0; j < 6; j++)
     {
-      fout << "," << value[i];
+      fout << "," << value[j];
     }
     fout << endl;
 
     fout << "weight";
-    for (int i = 0; i < 6; i++)
+    for (int j = 0; j < 6; j++)
     {
-      fout << "," << weight[i];
+      fout << "," << weight[j];
     }
     fout << endl;
 
     fout << "numItemsInKnapsack";
-    for (int i = 0; i < 6; i++)
+    for (int j = 0; j < 6; j++)
     {
-      fout << "," << number[i];
+      fout << "," << number[j];
     }
     fout << endl;
     fout << ",,,,,," << endl;
+    string approaches[] = {"Greedy By Weight", "Greedy By Value",
+                           "Greedy By Ratio", "Exhaustive Search",
+                           "Pruned Exhaustive Search",
+                           "Optimized Greedy by Weight"};
+
+    for (int j = 0; j < 6; j++)
+    {
+      fo2 << files[i] << ", " << approaches[j] << ", " << time[j].count() << ", ";
+      fo2 << value[j] << ", " << weight[j] << ", " << number[j] << endl;
+    }
   }
+
+  fout.close();
+  fo2.close();
 }
