@@ -36,13 +36,13 @@ vector<snowglobe> grabByWeightOpt(int maxWeight, vector<snowglobe>& house)
 
   //Greedy Algorithms are implemented below
   sort(house.begin(), house.end(), sortWeight);
-  for (int i = 0; i < house.size(); i++)
+  while (!house.empty())
   {
-    if (currentWeight+house[i].weight <= maxWeight)
+    if (currentWeight+house[0].weight <= maxWeight)
     {
-      knapsack.push_back(house[i]);
-      currentWeight += house[i].weight;
-      house.erase(house.begin() + i);
+      knapsack.push_back(house[0]);
+      currentWeight += house[0].weight;
+      house.erase(house.begin());
     }
     else
     {
@@ -169,6 +169,10 @@ void recursivelyExhaustivePruned(vector<snowglobe> house, int houseSize, int pla
 
 vector<snowglobe> simulatedAnnealing(vector<snowglobe> knapsack, vector<snowglobe> house, int maxWeight)
 {
+  if (house.empty())
+  {
+    return knapsack;
+  }
   // Generate random seed and other random tools
   random_device rd{};
   mt19937 engine{rd()};

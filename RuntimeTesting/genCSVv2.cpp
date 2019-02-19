@@ -12,13 +12,8 @@ int main()
 {
   // A list of all files so that we can pick and choose which ones we
   // want or can just run all of them.
-  string files[] = {"a31.kp",
-                    "b31.kp",
-                    "c31.kp",
-                    "d31.kp",
-                    "e31.kp",
-                    "f31.kp"};
-  int numFiles = 6;
+  string files[] = {"g25.kp"};
+  int numFiles = 1;
   string fileOut1 = "runtimeTest_v1start.csv";
   string fileOut2 = "runtimeTest_v2start.csv";
   ofstream fout(fileOut1, ofstream::out);
@@ -26,6 +21,7 @@ int main()
   fo2 << "File, Approach, Runtime, Value, Weight, Number of Items in Knapsack" << endl;
   for (int i = 0; i < numFiles; i++)
   {
+    cout << 1 << endl;
     fout << ",,,"+files[i]+",,," << endl;
     fout << ", Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight" << endl;
     // Declare all variables needed.
@@ -35,6 +31,8 @@ int main()
     string line;
     ifstream fin;
 
+    cout << 2 << endl;
+
     int numItems = 0;
     int maxWeight = 0;
     int tempValue = 0;
@@ -43,6 +41,8 @@ int main()
     int snowglobeWeight = 0;
     int snowglobeValue = 0;
 
+
+    cout << 3 << endl;
     //open the file and read in the snowglobes
     fin.open(files[i].c_str());
 
@@ -84,6 +84,8 @@ int main()
     }
 
     fin.close();
+
+    cout << 4 << endl;
     // Variables to store each time, value, weight, and number
     // of items
     chrono::duration<double, std::milli> time[6];
@@ -93,6 +95,7 @@ int main()
 
     // Get the time, value, weight, number of items in knapsack
     // at end for each method.
+    cout << 5 << endl;
     auto t1 = chrono::high_resolution_clock::now();
     knapsack = grabByWeightGreed(maxWeight, house);
     auto t2 = chrono::high_resolution_clock::now();
@@ -101,6 +104,7 @@ int main()
     weight[0] = getWeight(knapsack);
     number[0] = knapsack.size();
 
+    cout << 6 << endl;
     t1 = chrono::high_resolution_clock::now();
     knapsack = grabByValue(maxWeight, house);
     t2 = chrono::high_resolution_clock::now();
@@ -109,6 +113,7 @@ int main()
     weight[1] = getWeight(knapsack);
     number[1] = knapsack.size();
 
+    cout << 7 << endl;
     t1 = chrono::high_resolution_clock::now();
     knapsack = grabByRatio(maxWeight, house);
     t2 = chrono::high_resolution_clock::now();
@@ -117,6 +122,7 @@ int main()
     weight[2] = getWeight(knapsack);
     number[2] = knapsack.size();
 
+    cout << 8 << endl;
     t1 = chrono::high_resolution_clock::now();
     t2 = t1;
     time[3] = t2-t1;
@@ -129,6 +135,7 @@ int main()
     weight[4] = 0;
     number[4] = 0;
 
+    cout << 9 << endl;
     t1 = chrono::high_resolution_clock::now();
     knapsack = grabByWeightOpt(maxWeight, house);
     knapsack = simulatedAnnealing(knapsack, house, maxWeight);

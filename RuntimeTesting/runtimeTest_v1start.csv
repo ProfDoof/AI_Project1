@@ -1,42 +1,7 @@
-,,,a31.kp,,,
+,,,g25.kp,,,
 , Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
-runtime,0.04902,0.041729,0.037827,0,0,5500.13
-value,2640,2781,2781,0,0,2781
-weight,985,997,997,0,0,997
-numItemsInKnapsack,29,29,29,0,0,29
-,,,,,,
-,,,b31.kp,,,
-, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
-runtime,0.030893,0.039764,0.039305,0,0,5500.09
-value,291,300,300,0,0,299
-weight,986,981,981,0,0,995
-numItemsInKnapsack,29,28,28,0,0,29
-,,,,,,
-,,,c31.kp,,,
-, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
-runtime,0.028605,0.035046,0.039456,0,0,5500.09
-value,590,601,601,0,0,601
-weight,986,1000,1000,0,0,1000
-numItemsInKnapsack,29,29,29,0,0,29
-,,,,,,
-,,,d31.kp,,,
-, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
-runtime,0.044126,0.04118,0.03979,0,0,5500.11
-value,469,506,506,0,0,496
-weight,986,985,985,0,0,992
-numItemsInKnapsack,29,28,28,0,0,29
-,,,,,,
-,,,e31.kp,,,
-, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
-runtime,0.047038,0.041209,0.03912,0,0,5500.11
-value,1014,1021,1036,0,0,1036
-weight,986,999,999,0,0,999
-numItemsInKnapsack,29,28,29,0,0,29
-,,,,,,
-,,,f31.kp,,,
-, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
-runtime,0.028425,0.037652,0.038677,0,0,5500.1
-value,250,280,280,0,0,273
-weight,986,984,1000,0,0,1000
-numItemsInKnapsack,29,28,29,0,0,29
+runtime,0.060274,0.05485,0.054115,0,0,0.099022
+value,1004,1004,1004,0,0,1004
+weight,1004,1004,1004,0,0,1004
+numItemsInKnapsack,25,25,25,0,0,25
 ,,,,,,
