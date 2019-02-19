@@ -1,0 +1,6 @@
+g23.kp, Greedy By Weight, 0.054871, 155, 144, 21
+g23.kp, Greedy By Value, 0.043675, 161, 148, 20
+g23.kp, Greedy By Ratio, 0.042766, 162, 149, 21
+g23.kp, Exhaustive Search, 627037, 162, 149, 21
+g23.kp, Pruned Exhaustive Search, 567748, 162, 149, 21
+g23.kp, Optimized Greedy by Weight, 5521.72, 162, 149, 21

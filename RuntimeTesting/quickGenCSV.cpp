@@ -15,7 +15,7 @@ using namespace std;
 void individualProcess(string filename)
 {
   string trueFile = filename;
-  trueFile.erase(trueFile.end()-2,trueFile.end());
+  trueFile.erase(trueFile.end()-3,trueFile.end());
   string fileOut1 = trueFile+"v1.csv";
   string fileOut2 = trueFile+"v2.csv";
   ofstream fout(fileOut1, ofstream::out);
@@ -184,6 +184,7 @@ void individualProcess(string filename)
 
   fout.close();
   fo2.close();
+  cout << "Completed fork for " << filename << endl;
 }
 
 int main()
@@ -198,17 +199,13 @@ int main()
                     "f21.kp","f23.kp","f25.kp","f30.kp", "f31.kp",
                     "g23.kp","g24.kp","g25.kp","g26.kp"};
   int numFiles = 34;
-  string fileOut1 = "runtimeTest_v1.csv";
-  string fileOut2 = "runtimeTest_v2.csv";
-  ofstream fout(fileOut1, ofstream::out);
-  ofstream fo2(fileOut2, ofstream::out);
-  fo2 << "File, Approach, Runtime, Value, Weight, Number of Items in Knapsack" << endl;
-  for (int i = 0; i < 1; i++)
+  for (int i = 0; i < numFiles; i++)
   {
     pid_t pid = fork();
     if (pid > 0)
     {
       individualProcess(files[i]);
+      i = numFiles;
     }
     else if (pid == 0)
     {

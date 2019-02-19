@@ -1,0 +1,7 @@
+,,,d21.kp,,,
+, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
+runtime,0.053699,0.037761,0.036754,163916,159269,5509.25
+value,196,223,226,226,226,224
+weight,423,438,445,449,449,449
+numItemsInKnapsack,18,17,18,18,18,18
+,,,,,,

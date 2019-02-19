@@ -1,0 +1,6 @@
+g26.kp, Greedy By Weight, 0.067785, 2301, 879, 23
+g26.kp, Greedy By Value, 0.051265, 2315, 887, 23
+g26.kp, Greedy By Ratio, 0.056202, 2309, 880, 23
+g26.kp, Exhaustive Search, 3.97411e+06, 2315, 887, 23
+g26.kp, Pruned Exhaustive Search, 2.30114e+06, 2315, 887, 23
+g26.kp, Optimized Greedy by Weight, 5508.96, 2308, 895, 23

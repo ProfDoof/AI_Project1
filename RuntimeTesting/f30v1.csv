@@ -1,0 +1,7 @@
+,,,f30.kp,,,
+, Greedy (by weight), Greedy (by value), Greedy (by ratio), Exhaustive Search, Pruned Exhaustive Search, Optimized Greedy by Weight
+runtime,0.048522,0.062531,0.060366,4.05065e+07,3.91807e+07,5511.87
+value,239,261,261,261,261,250
+weight,891,887,887,887,887,897
+numItemsInKnapsack,27,26,26,26,26,27
+,,,,,,
