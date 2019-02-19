@@ -1,0 +1,37 @@
+File, Approach, Runtime, Value, Weight, Number of Items in Knapsack
+a31.kp, Greedy By Weight, 0.04902, 2640, 985, 29
+a31.kp, Greedy By Value, 0.041729, 2781, 997, 29
+a31.kp, Greedy By Ratio, 0.037827, 2781, 997, 29
+a31.kp, Exhaustive Search, 0, 0, 0, 0
+a31.kp, Pruned Exhaustive Search, 0, 0, 0, 0
+a31.kp, Optimized Greedy by Weight, 5500.13, 2781, 997, 29
+b31.kp, Greedy By Weight, 0.030893, 291, 986, 29
+b31.kp, Greedy By Value, 0.039764, 300, 981, 28
+b31.kp, Greedy By Ratio, 0.039305, 300, 981, 28
+b31.kp, Exhaustive Search, 0, 0, 0, 0
+b31.kp, Pruned Exhaustive Search, 0, 0, 0, 0
+b31.kp, Optimized Greedy by Weight, 5500.09, 299, 995, 29
+c31.kp, Greedy By Weight, 0.028605, 590, 986, 29
+c31.kp, Greedy By Value, 0.035046, 601, 1000, 29
+c31.kp, Greedy By Ratio, 0.039456, 601, 1000, 29
+c31.kp, Exhaustive Search, 0, 0, 0, 0
+c31.kp, Pruned Exhaustive Search, 0, 0, 0, 0
+c31.kp, Optimized Greedy by Weight, 5500.09, 601, 1000, 29
+d31.kp, Greedy By Weight, 0.044126, 469, 986, 29
+d31.kp, Greedy By Value, 0.04118, 506, 985, 28
+d31.kp, Greedy By Ratio, 0.03979, 506, 985, 28
+d31.kp, Exhaustive Search, 0, 0, 0, 0
+d31.kp, Pruned Exhaustive Search, 0, 0, 0, 0
+d31.kp, Optimized Greedy by Weight, 5500.11, 496, 992, 29
+e31.kp, Greedy By Weight, 0.047038, 1014, 986, 29
+e31.kp, Greedy By Value, 0.041209, 1021, 999, 28
+e31.kp, Greedy By Ratio, 0.03912, 1036, 999, 29
+e31.kp, Exhaustive Search, 0, 0, 0, 0
+e31.kp, Pruned Exhaustive Search, 0, 0, 0, 0
+e31.kp, Optimized Greedy by Weight, 5500.11, 1036, 999, 29
+f31.kp, Greedy By Weight, 0.028425, 250, 986, 29
+f31.kp, Greedy By Value, 0.037652, 280, 984, 28
+f31.kp, Greedy By Ratio, 0.038677, 280, 1000, 29
+f31.kp, Exhaustive Search, 0, 0, 0, 0
+f31.kp, Pruned Exhaustive Search, 0, 0, 0, 0
+f31.kp, Optimized Greedy by Weight, 5500.1, 273, 1000, 29

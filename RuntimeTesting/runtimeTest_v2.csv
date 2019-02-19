@@ -1,0 +1,187 @@
+File, Approach, Runtime, Value, Weight, Number of Items in Knapsack
+a21.kp, Greedy By Weight, 0.047111, 453, 423, 18
+a21.kp, Greedy By Value, 0.045361, 532, 437, 17
+a21.kp, Greedy By Ratio, 0.040744, 532, 437, 17
+a21.kp, Exhaustive Search, 157217, 532, 437, 17
+a21.kp, Pruned Exhaustive Search, 157375, 532, 437, 17
+a21.kp, Optimized Greedy by Weight, 5511.68, 519, 441, 18
+a23.kp, Greedy By Weight, 0.053165, 537, 491, 19
+a23.kp, Greedy By Value, 0.037331, 590, 494, 18
+a23.kp, Greedy By Ratio, 0.042167, 597, 500, 18
+a23.kp, Exhaustive Search, 625160, 597, 500, 18
+a23.kp, Pruned Exhaustive Search, 569141, 597, 500, 18
+a23.kp, Optimized Greedy by Weight, 5507.78, 586, 499, 19
+a25.kp, Greedy By Weight, 0.053061, 616, 581, 22
+a25.kp, Greedy By Value, 0.04668, 676, 590, 21
+a25.kp, Greedy By Ratio, 0.047002, 676, 590, 21
+a25.kp, Exhaustive Search, 2.16798e+06, 676, 590, 21
+a25.kp, Pruned Exhaustive Search, 1.71996e+06, 676, 590, 21
+a25.kp, Optimized Greedy by Weight, 5504.52, 672, 596, 22
+a30.kp, Greedy By Weight, 0.059938, 2195, 866, 26
+a30.kp, Greedy By Value, 0.055448, 2563, 896, 26
+a30.kp, Greedy By Ratio, 0.04784, 2563, 896, 26
+a30.kp, Exhaustive Search, 3.96902e+07, 2563, 896, 26
+a30.kp, Pruned Exhaustive Search, 3.84843e+07, 2563, 896, 26
+a30.kp, Optimized Greedy by Weight, 5500.35, 2563, 896, 26
+b21.kp, Greedy By Weight, 0.043444, 123, 423, 18
+b21.kp, Greedy By Value, 0.05095, 136, 439, 17
+b21.kp, Greedy By Ratio, 0.050878, 136, 439, 17
+b21.kp, Exhaustive Search, 170433, 137, 450, 18
+b21.kp, Pruned Exhaustive Search, 171254, 137, 450, 18
+b21.kp, Optimized Greedy by Weight, 5500.19, 132, 450, 18
+b23.kp, Greedy By Weight, 0.045865, 140, 490, 20
+b23.kp, Greedy By Value, 0.054272, 145, 500, 20
+b23.kp, Greedy By Ratio, 0.059927, 145, 500, 20
+b23.kp, Exhaustive Search, 677593, 145, 500, 20
+b23.kp, Pruned Exhaustive Search, 597073, 145, 500, 20
+b23.kp, Optimized Greedy by Weight, 5516.2, 139, 499, 20
+b25.kp, Greedy By Weight, 0.050572, 149, 598, 23
+b25.kp, Greedy By Value, 0.059493, 165, 577, 22
+b25.kp, Greedy By Ratio, 0.055785, 165, 577, 22
+b25.kp, Exhaustive Search, 2.30889e+06, 165, 590, 22
+b25.kp, Pruned Exhaustive Search, 1.79444e+06, 165, 590, 22
+b25.kp, Optimized Greedy by Weight, 5500.19, 158, 599, 23
+b30.kp, Greedy By Weight, 0.053183, 277, 891, 27
+b30.kp, Greedy By Value, 0.06476, 289, 890, 26
+b30.kp, Greedy By Ratio, 0.062159, 289, 889, 26
+b30.kp, Exhaustive Search, 4.26921e+07, 289, 890, 26
+b30.kp, Pruned Exhaustive Search, 4.00038e+07, 289, 890, 26
+b30.kp, Optimized Greedy by Weight, 5505.84, 281, 900, 27
+c21.kp, Greedy By Weight, 0.040226, 202, 423, 18
+c21.kp, Greedy By Value, 0.043813, 250, 439, 17
+c21.kp, Greedy By Ratio, 0.040465, 250, 447, 18
+c21.kp, Exhaustive Search, 153215, 250, 439, 17
+c21.kp, Pruned Exhaustive Search, 156468, 250, 439, 17
+c21.kp, Optimized Greedy by Weight, 5556.15, 247, 444, 18
+c23.kp, Greedy By Weight, 0.041967, 319, 490, 20
+c23.kp, Greedy By Value, 0.053386, 384, 497, 19
+c23.kp, Greedy By Ratio, 0.049324, 384, 497, 19
+c23.kp, Exhaustive Search, 623091, 384, 497, 19
+c23.kp, Pruned Exhaustive Search, 567773, 384, 497, 19
+c23.kp, Optimized Greedy by Weight, 5518.09, 369, 499, 20
+c25.kp, Greedy By Weight, 0.044087, 396, 598, 23
+c25.kp, Greedy By Value, 0.054885, 422, 591, 22
+c25.kp, Greedy By Ratio, 0.051025, 422, 591, 22
+c25.kp, Exhaustive Search, 2.16642e+06, 422, 591, 22
+c25.kp, Pruned Exhaustive Search, 1.72228e+06, 422, 591, 22
+c25.kp, Optimized Greedy by Weight, 5500.17, 412, 600, 23
+c30.kp, Greedy By Weight, 0.048066, 553, 891, 27
+c30.kp, Greedy By Value, 0.061188, 587, 885, 26
+c30.kp, Greedy By Ratio, 0.070476, 584, 861, 26
+c30.kp, Exhaustive Search, 4.0505e+07, 587, 885, 26
+c30.kp, Pruned Exhaustive Search, 3.9181e+07, 587, 885, 26
+c30.kp, Optimized Greedy by Weight, 5514.44, 582, 900, 27
+d21.kp, Greedy By Weight, 0.053699, 196, 423, 18
+d21.kp, Greedy By Value, 0.037761, 223, 438, 17
+d21.kp, Greedy By Ratio, 0.036754, 226, 445, 18
+d21.kp, Exhaustive Search, 163916, 226, 449, 18
+d21.kp, Pruned Exhaustive Search, 159269, 226, 449, 18
+d21.kp, Optimized Greedy by Weight, 5509.25, 224, 449, 18
+d23.kp, Greedy By Weight, 0.058205, 263, 475, 19
+d23.kp, Greedy By Value, 0.056285, 285, 493, 18
+d23.kp, Greedy By Ratio, 0.049738, 287, 495, 19
+d23.kp, Exhaustive Search, 661223, 287, 495, 19
+d23.kp, Pruned Exhaustive Search, 586260, 287, 495, 19
+d23.kp, Optimized Greedy by Weight, 5514.9, 276, 492, 19
+d25.kp, Greedy By Weight, 0.057835, 319, 598, 23
+d25.kp, Greedy By Value, 0.058255, 333, 594, 22
+d25.kp, Greedy By Ratio, 0.050193, 333, 594, 22
+d25.kp, Exhaustive Search, 2.25786e+06, 333, 598, 22
+d25.kp, Pruned Exhaustive Search, 1.77313e+06, 333, 598, 22
+d25.kp, Optimized Greedy by Weight, 5500.21, 320, 599, 23
+d30.kp, Greedy By Weight, 0.085535, 433, 900, 27
+d30.kp, Greedy By Value, 0.064695, 472, 872, 25
+d30.kp, Greedy By Ratio, 0.066163, 472, 872, 25
+d30.kp, Exhaustive Search, 4.17006e+07, 472, 872, 25
+d30.kp, Pruned Exhaustive Search, 3.98194e+07, 472, 872, 25
+d30.kp, Optimized Greedy by Weight, 5500.23, 433, 900, 27
+e21.kp, Greedy By Weight, 0.065149, 458, 423, 18
+e21.kp, Greedy By Value, 0.047551, 477, 441, 18
+e21.kp, Greedy By Ratio, 0.048921, 476, 433, 18
+e21.kp, Exhaustive Search, 164421, 477, 441, 18
+e21.kp, Pruned Exhaustive Search, 161295, 477, 441, 18
+e21.kp, Optimized Greedy by Weight, 5500.2, 476, 433, 18
+e23.kp, Greedy By Weight, 0.063556, 507, 482, 19
+e23.kp, Greedy By Value, 0.158561, 527, 499, 18
+e23.kp, Greedy By Ratio, 0.054839, 538, 490, 19
+e23.kp, Exhaustive Search, 658913, 539, 498, 19
+e23.kp, Pruned Exhaustive Search, 589959, 539, 498, 19
+e23.kp, Optimized Greedy by Weight, 5500.2, 536, 497, 19
+e25.kp, Greedy By Weight, 0.075602, 621, 598, 23
+e25.kp, Greedy By Value, 0.058926, 627, 584, 22
+e25.kp, Greedy By Ratio, 0.063545, 638, 600, 23
+e25.kp, Exhaustive Search, 2.26151e+06, 638, 600, 23
+e25.kp, Pruned Exhaustive Search, 1.77411e+06, 638, 600, 23
+e25.kp, Optimized Greedy by Weight, 5526.19, 638, 600, 23
+e30.kp, Greedy By Weight, 0.083646, 919, 861, 26
+e30.kp, Greedy By Value, 0.077857, 949, 887, 25
+e30.kp, Greedy By Ratio, 0.063128, 963, 895, 26
+e30.kp, Exhaustive Search, 4.17757e+07, 963, 895, 26
+e30.kp, Pruned Exhaustive Search, 3.98314e+07, 963, 895, 26
+e30.kp, Optimized Greedy by Weight, 5500.22, 952, 899, 26
+f21.kp, Greedy By Weight, 0.036837, 192, 423, 18
+f21.kp, Greedy By Value, 0.038177, 227, 447, 18
+f21.kp, Greedy By Ratio, 0.035579, 227, 446, 18
+f21.kp, Exhaustive Search, 153113, 227, 447, 18
+f21.kp, Pruned Exhaustive Search, 158748, 227, 447, 18
+f21.kp, Optimized Greedy by Weight, 5500.17, 227, 447, 18
+f23.kp, Greedy By Weight, 0.044731, 217, 490, 20
+f23.kp, Greedy By Value, 0.045326, 239, 484, 18
+f23.kp, Greedy By Ratio, 0.044914, 245, 494, 19
+f23.kp, Exhaustive Search, 628359, 245, 494, 19
+f23.kp, Pruned Exhaustive Search, 567261, 245, 494, 19
+f23.kp, Optimized Greedy by Weight, 5518.43, 239, 496, 20
+f25.kp, Greedy By Weight, 0.043808, 266, 598, 23
+f25.kp, Greedy By Value, 0.046985, 279, 598, 22
+f25.kp, Greedy By Ratio, 0.052283, 278, 587, 22
+f25.kp, Exhaustive Search, 2.17098e+06, 279, 598, 22
+f25.kp, Pruned Exhaustive Search, 1.7234e+06, 279, 598, 22
+f25.kp, Optimized Greedy by Weight, 5504.5, 273, 600, 23
+f30.kp, Greedy By Weight, 0.048522, 239, 891, 27
+f30.kp, Greedy By Value, 0.062531, 261, 887, 26
+f30.kp, Greedy By Ratio, 0.060366, 261, 887, 26
+f30.kp, Exhaustive Search, 4.05065e+07, 261, 887, 26
+f30.kp, Pruned Exhaustive Search, 3.91807e+07, 261, 887, 26
+f30.kp, Optimized Greedy by Weight, 5511.87, 250, 897, 27
+g23.kp, Greedy By Weight, 0.054871, 155, 144, 21
+g23.kp, Greedy By Value, 0.043675, 161, 148, 20
+g23.kp, Greedy By Ratio, 0.042766, 162, 149, 21
+g23.kp, Exhaustive Search, 627037, 162, 149, 21
+g23.kp, Pruned Exhaustive Search, 567748, 162, 149, 21
+g23.kp, Optimized Greedy by Weight, 5521.72, 162, 149, 21
+g24.kp, Greedy By Weight, 0.057957, 124, 101, 22
+g24.kp, Greedy By Value, 0.052146, 130, 107, 22
+g24.kp, Greedy By Ratio, 0.047919, 128, 101, 22
+g24.kp, Exhaustive Search, 1.22773e+06, 130, 107, 22
+g24.kp, Pruned Exhaustive Search, 885218, 130, 107, 22
+g24.kp, Optimized Greedy by Weight, 5507.47, 124, 107, 22
+g26.kp, Greedy By Weight, 0.067785, 2301, 879, 23
+g26.kp, Greedy By Value, 0.051265, 2315, 887, 23
+g26.kp, Greedy By Ratio, 0.056202, 2309, 880, 23
+g26.kp, Exhaustive Search, 3.97411e+06, 2315, 887, 23
+g26.kp, Pruned Exhaustive Search, 2.30114e+06, 2315, 887, 23
+g26.kp, Optimized Greedy by Weight, 5508.96, 2308, 895, 23
+a31.kp, Greedy By Weight, 0.04902, 2640, 985, 29
+a31.kp, Greedy By Value, 0.041729, 2781, 997, 29
+a31.kp, Greedy By Ratio, 0.037827, 2781, 997, 29
+a31.kp, Optimized Greedy by Weight, 5500.13, 2781, 997, 29
+b31.kp, Greedy By Weight, 0.030893, 291, 986, 29
+b31.kp, Greedy By Value, 0.039764, 300, 981, 28
+b31.kp, Greedy By Ratio, 0.039305, 300, 981, 28
+b31.kp, Optimized Greedy by Weight, 5500.09, 299, 995, 29
+c31.kp, Greedy By Weight, 0.028605, 590, 986, 29
+c31.kp, Greedy By Value, 0.035046, 601, 1000, 29
+c31.kp, Greedy By Ratio, 0.039456, 601, 1000, 29
+c31.kp, Optimized Greedy by Weight, 5500.09, 601, 1000, 29
+d31.kp, Greedy By Weight, 0.044126, 469, 986, 29
+d31.kp, Greedy By Value, 0.04118, 506, 985, 28
+d31.kp, Greedy By Ratio, 0.03979, 506, 985, 28
+d31.kp, Optimized Greedy by Weight, 5500.11, 496, 992, 29
+e31.kp, Greedy By Weight, 0.047038, 1014, 986, 29
+e31.kp, Greedy By Value, 0.041209, 1021, 999, 28
+e31.kp, Greedy By Ratio, 0.03912, 1036, 999, 29
+e31.kp, Optimized Greedy by Weight, 5500.11, 1036, 999, 29
+f31.kp, Greedy By Weight, 0.028425, 250, 986, 29
+f31.kp, Greedy By Value, 0.037652, 280, 984, 28
+f31.kp, Greedy By Ratio, 0.038677, 280, 1000, 29
+f31.kp, Optimized Greedy by Weight, 5500.1, 273, 1000, 29
